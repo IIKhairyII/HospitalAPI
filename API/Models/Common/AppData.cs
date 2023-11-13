@@ -2,7 +2,7 @@
 {
     public class AppData
     {
-        List<Doctor.Doctor> doctors = new();
-        List<Patient.Patient> patients = new();
+        public List<Doctor.Doctor> doctors = new();
+        public List<Patient.Patient> patients = new();
     }
 }
