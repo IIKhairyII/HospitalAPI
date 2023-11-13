@@ -1,5 +1,5 @@
-﻿using API.Models.Doctor;
-using Microsoft.AspNetCore.Http;
+﻿using API.Models.Common;
+using API.Models.Doctor;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -8,10 +8,24 @@ namespace API.Controllers
     [ApiController]
     public class DoctorController : ControllerBase
     {
+        public DoctorController(AppData data)
+        {
+            _data = data;
+        }
+        private AppData _data;
+
         [HttpGet]
         public ActionResult Doctors()
         {
-            return Ok();
+            try
+            {
+                var doctors = _data.doctors.OrderBy(d => d.Key).ToList();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
         }
 
         [HttpPost]
