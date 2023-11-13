@@ -2,7 +2,7 @@
 
 namespace API.Models.Common
 {
-    public class Common
+    public class CommonInfo
     {
         [Required]
         public int Key { get; set; }
