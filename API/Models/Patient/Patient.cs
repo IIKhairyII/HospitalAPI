@@ -2,7 +2,7 @@
 
 namespace API.Models.Patient
 {
-    public class Patient : Common.Common
+    public class Patient : CommonInfo
     {
     }
 }
